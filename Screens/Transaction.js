@@ -116,11 +116,11 @@ export default class Transaction extends React.Component {
     initiateBookIssue = (bookId, studentId, bookName, studentName) => {
         //adicionar transição
         db.collection("transactions").add({
-            student_id: studenid,
+            student_id: studentId,
             student_name: studentName,
             book_id: bookId,
             book_name: bookName,
-            date: firebase.firestore.Timestamo.now().toDate(),
+            date: firebase.firestore.Timestamp.now().toDate(),
             transaction_type: "issue"
         })
         //alterar status do livro 
@@ -133,7 +133,7 @@ export default class Transaction extends React.Component {
         db.colection("students")
             .doc(studentId)
             .update({
-                number_of_books_issued: farebase.direstore.FieldValue.increment(1)
+                number_of_books_issued: firebase.firestore.FieldValue.increment(1)
             })
         //atualizado os estados
         this.setState({
