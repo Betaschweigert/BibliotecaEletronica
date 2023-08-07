@@ -20,13 +20,13 @@ export default function TabNavigator() {
           iconName = "search";
         }
 
-        // Você pode devolver qualquer componente que desejar aqui!
+        
         return (
           <Ionicons
             name={iconName}
             size={size}
             color={color}
-            size={size}
+          
           />
         );
       }
